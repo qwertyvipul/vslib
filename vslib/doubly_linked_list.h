@@ -1,6 +1,10 @@
 #ifndef DOUBLY_LINKED_LIST_H
 #define DOUBLY_LINKED_LIST_H
 
+#include<iostream>
+using namespace std;
+#include<stdlib.h>
+
 namespace vip {
 	template<class T>
 	class DoublyLinkedList;
