@@ -5,8 +5,13 @@
 using namespace std;
 #include<stdlib.h>
 
+namespace vip {
+	template<class T>
+	class SinglyLinkedList;
+}
+
 template<class T>
-class SinglyLinkedList {
+class vip::SinglyLinkedList {
 private:
 	struct Node{
 		T data;
@@ -21,7 +26,7 @@ public:
 };
 
 template<class T>
-SinglyLinkedList<T>::SinglyLinkedList() {
+vip::SinglyLinkedList<T>::SinglyLinkedList() {
 	head = NULL;
 }
 
@@ -34,7 +39,7 @@ struct Node* SinglyLinkedList<T>::newNode() {
 */
 
 template<class T>
-void SinglyLinkedList<T>::insert(T data) {
+void vip::SinglyLinkedList<T>::insert(T data) {
 	//Node* new_node = newNode();
 	Node* new_node = (Node*)malloc(sizeof(Node));
 	new_node->data = data;
@@ -54,7 +59,7 @@ void SinglyLinkedList<T>::insert(T data) {
 }
 
 template<class T>
-void SinglyLinkedList<T>::print() {
+void vip::SinglyLinkedList<T>::print() {
 	Node* node = head;
 	while (node) {
 		if (node == head) cout << node->data;
