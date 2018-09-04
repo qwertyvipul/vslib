@@ -116,6 +116,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="data_structures.h" />
+    <ClInclude Include="doubly_linked_list.h" />
     <ClInclude Include="singly_linked_list.h" />
     <ClInclude Include="vslib.h" />
   </ItemGroup>
