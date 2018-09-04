@@ -5,20 +5,66 @@
 using namespace std;
 #include<stdlib.h>
 
-struct SinglyNode{
-	int data;
-	struct SinglyNode* next;
-};
+namespace vip {
+	template<class T>
+	class SinglyLinkedList;
+}
 
-
-class SinglyLinkedList {
+template<class T>
+class vip::SinglyLinkedList {
+private:
+	struct Node{
+		T data;
+		struct Node* next;
+	};
+	Node* head;
 public:
-	struct SinglyNode* head;
-
 	SinglyLinkedList();
-	void insert(int data);
+	void insert(T data);
 	void print();
-	struct SinglyNode* createNode();
-	//SinglyLinkedList* getHead();
+	//struct Node* newNode();
 };
+
+template<class T>
+vip::SinglyLinkedList<T>::SinglyLinkedList() {
+	head = NULL;
+}
+
+/*
+template<class T>
+struct Node* SinglyLinkedList<T>::newNode() {
+	Node* node = (Node*)malloc(sizeof(Node));
+	return node;
+}
+*/
+
+template<class T>
+void vip::SinglyLinkedList<T>::insert(T data) {
+	//Node* new_node = newNode();
+	Node* new_node = (Node*)malloc(sizeof(Node));
+	new_node->data = data;
+	new_node->next = NULL;
+	if (head == NULL) {
+		head = new_node;
+	}
+	else {
+		Node* node = head;
+		Node* temp = head;
+		while (node) {
+			temp = node;
+			node = node->next;
+		}
+		temp->next = new_node;
+	}
+}
+
+template<class T>
+void vip::SinglyLinkedList<T>::print() {
+	Node* node = head;
+	while (node) {
+		if (node == head) cout << node->data;
+		else cout << " -> " << node->data;
+		node = node->next;
+	}
+}
 #endif

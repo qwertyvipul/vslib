@@ -122,7 +122,6 @@
   <ItemGroup>
     <ClCompile Include="data_structures.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="singly_linked_list.cpp" />
     <ClCompile Include="vslib.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
