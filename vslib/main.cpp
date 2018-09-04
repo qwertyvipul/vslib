@@ -1,10 +1,11 @@
 #include<iostream>
+#include<stdlib.h>
 #include<conio.h>
 using namespace std;
-#include "vslib.h"
+#include "singly_linked_list.h"
 
 int main() {
-	SinglyLinkedList list;
+	vip::SinglyLinkedList<int> list;
 	list.insert(10);
 	list.insert(20);
 	list.print();
