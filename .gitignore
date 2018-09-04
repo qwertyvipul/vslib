@@ -4,3 +4,4 @@ vslib/.idea/*
 vslib/cmake-build-debug/*
 vslib/main.cpp
 vslib/Debug/*
+*.exe
