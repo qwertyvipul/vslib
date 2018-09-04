@@ -22,7 +22,9 @@ public:
 	SinglyLinkedList();
 	void insert(T data);
 	void print();
-	//struct Node* newNode();
+	Node* newNode();
+	bool valueExist(T data);
+	void deleteNodeByValue(T data);
 };
 
 template<class T>
@@ -32,7 +34,7 @@ vip::SinglyLinkedList<T>::SinglyLinkedList() {
 
 /*
 template<class T>
-struct Node* SinglyLinkedList<T>::newNode() {
+vip::SinglyLinkedList<T>::Node* vip::SinglyLinkedList<T>::newNode() {
 	Node* node = (Node*)malloc(sizeof(Node));
 	return node;
 }
@@ -66,5 +68,31 @@ void vip::SinglyLinkedList<T>::print() {
 		else cout << " -> " << node->data;
 		node = node->next;
 	}
+}
+
+template<class T>
+void vip::SinglyLinkedList<T>::deleteNodeByValue(T data) {
+    Node* node = head;
+    Node* temp = head;
+    while(node->data != data){
+        temp = node;
+        node = node->next;
+    }
+    if(node == head){
+        head = head->next;
+        delete node;
+    }else{
+        temp->next = node->next;
+        delete node;
+    }
+}
+
+template<class T>
+bool vip::SinglyLinkedList<T>::valueExist(T data) {
+	Node* node = head;
+	while (node) {
+		if (node->data == data) return true;
+	}
+	return false;
 }
 #endif
