@@ -26,7 +26,7 @@ void vip::DuplicateKeyException<T>::setKey(T key) {
 
 template<class T>
 const char* vip::DuplicateKeyException<T>::what() {
-	return "DuplicateKeyException: duplicate key found - " + std::to_string(key);
+	return "DuplicateKeyException: Binary Search Tree cannot store duplicate keys.";
 }
 
 #endif
