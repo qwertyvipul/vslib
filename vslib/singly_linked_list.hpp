@@ -4,6 +4,7 @@
 #include<iostream>
 using namespace std;
 #include<stdlib.h>
+#include<cstring>
 
 namespace vip {
 	template<class T>
@@ -22,7 +23,7 @@ public:
 	SinglyLinkedList();
 	void insert(T data);
 	void print();
-	Node* newNode();
+	char* getList();
 	bool valueExist(T data);
 	void deleteNodeByValue(T data);
 };
@@ -32,18 +33,9 @@ vip::SinglyLinkedList<T>::SinglyLinkedList() {
 	head = NULL;
 }
 
-/*
-template<class T>
-vip::SinglyLinkedList<T>::Node* vip::SinglyLinkedList<T>::newNode() {
-	Node* node = (Node*)malloc(sizeof(Node));
-	return node;
-}
-*/
-
 template<class T>
 void vip::SinglyLinkedList<T>::insert(T data) {
-	//Node* new_node = newNode();
-	Node* new_node = (Node*)malloc(sizeof(Node));
+	Node* new_node = new Node;
 	new_node->data = data;
 	new_node->next = NULL;
 	if (head == NULL) {
@@ -62,6 +54,16 @@ void vip::SinglyLinkedList<T>::insert(T data) {
 
 template<class T>
 void vip::SinglyLinkedList<T>::print() {
+	Node* node = head;
+	while (node) {
+		if (node == head) cout << node->data;
+		else cout << " -> " << node->data;
+		node = node->next;
+	}
+}
+
+template<class T>
+char* vip::SinglyLinkedList<T>::getList() {
 	Node* node = head;
 	while (node) {
 		if (node == head) cout << node->data;
@@ -92,6 +94,7 @@ bool vip::SinglyLinkedList<T>::valueExist(T data) {
 	Node* node = head;
 	while (node) {
 		if (node->data == data) return true;
+		node = node->next;
 	}
 	return false;
 }
