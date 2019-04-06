@@ -3,6 +3,7 @@
 
 #include<iostream>
 using namespace std;
+#include<stdlib.h>
 
 namespace vip {
 	template<class T>
@@ -37,7 +38,7 @@ vip::DoublyLinkedList<T>::DoublyLinkedList() {
 
 template<class T>
 void vip::DoublyLinkedList<T>::insert(T data) {
-	Node* new_node = new Node;
+	Node* new_node = (Node*)malloc(sizeof(Node));
 	new_node->data = data;
 	new_node->next = NULL;
 	new_node->prev = NULL;
@@ -93,7 +94,6 @@ bool vip::DoublyLinkedList<T>::valueExist(T data) {
 	Node* node = head;
 	while (node) {
 		if (node->data == data) return true;
-		node = node->next;
 	}
 	return false;
 }
