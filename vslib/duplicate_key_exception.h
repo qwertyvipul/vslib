@@ -1,5 +1,5 @@
-#ifndef DUPLICATE_KEY_EXCEPTION_H
-#define DUPLICATE_KEY_EXCEPTION_H
+#ifndef DUPLICATE_KEY_EXCEPTION_HPP
+#define DUPLICATE_KEY_EXCEPTION_HPP
 
 #include<iostream>
 #include<cstring>
