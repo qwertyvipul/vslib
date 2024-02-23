@@ -1,2 +1,3 @@
 # vslib
-The C++ legacy project.
+
+Generic C++ data structures library.
